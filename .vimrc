@@ -108,7 +108,7 @@ set t_Co=256
 syntax enable
 let g:solarized_termcolors=256
 set background=dark
-colorscheme github
+colorscheme wombat256
 " Use JSX highlighting for .js files (not just .jsx)
 let g:jsx_ext_required = 0
 

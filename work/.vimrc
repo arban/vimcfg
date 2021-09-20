@@ -50,8 +50,9 @@ Plugin 'altercation/vim-colors-solarized'
 " gruvbox (color scheme)
 Plugin 'morhetz/gruvbox'
 
-" Brackets auto-complete
-Plugin 'jiangmiao/auto-pairs'
+" " Brackets auto-complete
+" Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
 
 " Clang
 " Plugin 'justmao945/vim-clang'
@@ -70,6 +71,9 @@ Plugin 'ddollar/golang-template.vim'
 
 " Typescript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
+
+" Kotlin syntax highlighting
+Plugin 'udalov/kotlin-vim'
 
 " To install plugins :PluginInstall
 
@@ -118,11 +122,11 @@ scriptencoding utf-8
 set t_Co=16
 let g:solarized_termcolors=16
 
-
 syntax enable
 " let g:solarized_termcolors=256
+" colorscheme wombat256
+colorscheme solarized
 set background=light
-colorscheme wombat256
 " Use JSX highlighting for .js files (not just .jsx)
 let g:jsx_ext_required = 0
 
@@ -197,6 +201,7 @@ set noshowmode " airline shows mode anyway, not necessary
 
 " Tmuxline settings
 let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = 'custom'
 
 " Turn off automatic syntax checking
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
@@ -225,4 +230,4 @@ let g:terraform_align=1
 
 " Fix annoying bug?
 " set background=light
-colorscheme wombat256
+" colorscheme wombat256

@@ -44,8 +44,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 " airline color scheme - wombat256
 " Plugin 'ShawnHuang/vim-airline-wombat256'
 
-" " solarized (color scheme)
-" Plugin 'altercation/vim-colors-solarized'
+" solarized (color scheme)
+Plugin 'altercation/vim-colors-solarized'
 
 " gruvbox (color scheme)
 Plugin 'morhetz/gruvbox'
@@ -58,34 +58,22 @@ Plugin 'Raimondi/delimitMate'
 " Plugin 'justmao945/vim-clang'
 
 " Python folding
-" Plugin 'tmhedberg/SimpylFold'
+Plugin 'tmhedberg/SimpylFold'
 
 " Fast automatic folds
 Plugin 'Konfekt/FastFold'
 
 " Terraform highlighting/formatting
-" Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-terraform'
 
 " Go template syntax highlighting
-" Plugin 'ddollar/golang-template.vim'
-
-" Helm (yaml + gotmpl + sprig + custom) highlighting
-Plugin 'towolf/vim-helm'
+Plugin 'ddollar/golang-template.vim'
 
 " Typescript syntax highlighting
-" Plugin 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " Kotlin syntax highlighting
-" Plugin 'udalov/kotlin-vim'
-
-" vim-go, go tooling and gopls support
-" Plugin 'fatih/vim-go'
-
-" Tagbar (outline based on ctags)
-" Plugin 'preservim/tagbar'
-
-" Collection of language packs
-Plugin 'sheerun/vim-polyglot'
+Plugin 'udalov/kotlin-vim'
 
 " To install plugins :PluginInstall
 
@@ -127,18 +115,18 @@ scriptencoding utf-8
 
 " Syntax hilighting and color settings
 " if &term =~ '256color'
-"     set t_ut=
+" 	set t_ut=
 " endif
 " set t_Co=256
 
 set t_Co=16
-" let g:solarized_termcolors=16
+let g:solarized_termcolors=16
 
 syntax enable
 " let g:solarized_termcolors=256
 " colorscheme wombat256
-" colorscheme solarized
-" set background=light
+colorscheme solarized
+set background=light
 " Use JSX highlighting for .js files (not just .jsx)
 let g:jsx_ext_required = 0
 
@@ -189,8 +177,8 @@ nnoremap <M-l> <C-W>L
 nnoremap <Space> za
 vnoremap <Space> za
 
-" <F8> F8 toggles Tagbar
-nmap <F8> :TagbarToggle<CR>
+" <F8> saves the buffer
+nmap <F8> :w<CR>
 
 " F8 toggles Goyo (zen mode)
 nnoremap <F9> :Goyo<CR>
@@ -240,45 +228,6 @@ set visualbell
 
 let g:terraform_align=1
 
-" Set up gotags (for outline)
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
-
-"
-" Base64 shortcuts
-"
-" 1. base64-encode(visual-selection) -> F2 -> encoded base64-string
-:nnoremap <F3> viWc<c-r>=system("base64 -w 0", @")<cr><esc>
-" :vnoremap <F3> c<c-r>=system("base64 -w 0", @")<cr><esc>
-" 2. base64-decode(visual-selection) -> F3 -> decoded string
-" :vnoremap <F4> c<c-r>=system("base64 -d", @")<cr> 
-:nnoremap <F4> viWc<c-r>=system("base64 -d", @")<cr><esc>
-
-set background=dark
-colorscheme wombat256
-let g:airline_theme='badwolf'
+" Fix annoying bug?
+" set background=light
+" colorscheme wombat256
